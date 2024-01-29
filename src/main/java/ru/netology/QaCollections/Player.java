@@ -1,5 +1,7 @@
 package ru.netology.QaCollections;
 
+import java.util.HashMap;
+
 public class Player {
 
     protected int id;
@@ -33,3 +35,5 @@ public class Player {
         this.strength = strength;
     }
 }
+
+
