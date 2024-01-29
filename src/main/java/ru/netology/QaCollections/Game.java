@@ -1,24 +1,25 @@
 package ru.netology.QaCollections;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Game {
 
-    List<Player> players = new ArrayList<>();
+    //List<Player> players = new ArrayList<>();
+
+    HashMap<String, Player> players = new HashMap<>();
 
     public void register(Player player) {
-        players.add(player);
+        players.put(player.name, player);
     }
 
     public int round(String playerName1, String playerName2) {
         Player player1 = null;
         Player player2 = null;
-        for (Player player : players) {
+        for (String key : players.keySet()) {
+            Player player = players.get(key);
             if (player.getName().equals(playerName1)) {
                 player1 = player;
-            }
-            else if (player.getName().equals(playerName2)) {
+            } else if (player.getName().equals(playerName2)) {
                 player2 = player;
             }
         }
